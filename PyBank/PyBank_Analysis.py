@@ -47,3 +47,18 @@ print(f"Total: ${sum(profit)}")
 print(f"Average Change: {round(sum(change_profit)/len(change_profit),2)}")
 print(f"Greatest Increase in Profits: {month_count[month_increase]} (${(str(increase))})")
 print(f"Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})") 
+
+#Write text file
+Analysis = os.path.join((os.path.abspath(__file__)), '..', 'Analysis', 'PyBank.txt')
+with open(Analysis,"w") as new:
+    new.write("Financial Analysis")
+    new.write("\n")
+    new.write(f"Total Months:{len(month_count)}")
+    new.write("\n")
+    new.write(f"Total: ${sum(profit)}")
+    new.write("\n")
+    new.write(f"Average Change: {round(sum(change_profit)/len(change_profit),2)}")
+    new.write("\n")
+    new.write(f"Greatest Increase in Profits: {month_count[month_increase]} (${(str(increase))})")
+    new.write("\n")
+    new.write(f"Greatest Decrease in Profits: {month_count[month_decrease]} (${(str(decrease))})")
